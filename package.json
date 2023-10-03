@@ -15,7 +15,8 @@
         "distube": "^4.1.0",
         "dotenv": "^16.3.1",
         "ffmpeg-static": "^5.2.0",
-        "libsodium-wrappers": "^0.7.13"
+        "libsodium-wrappers": "^0.7.13",
+        "pm2": "^5.3.0"
     },
     "scripts": {
         "dev": "nodemon src/server.js",

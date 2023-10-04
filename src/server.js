@@ -102,14 +102,13 @@ const status = (queue) =>
 
 // Distube state change status notification handler
 client.distube
-    .on('playSong', (queue, song) => {
-        console.log(queue, song)
-        return queue.textChannel.send(
+    .on('playSong', (queue, song) =>
+        queue.textChannel.send(
             `${client.emotes.play} | Playing \`${song.name}\` - \`${
                 song.formattedDuration
             }\`\nRequested by: ${song.user}\n${status(queue)}`
         )
-    })
+    )
     .on('addSong', (queue, song) =>
         queue.textChannel.send(
             `${client.emotes.success} | Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`

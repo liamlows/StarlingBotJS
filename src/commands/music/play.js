@@ -18,10 +18,10 @@ module.exports = {
                 member: interaction.member,
                 textChannel: interaction.channel,
             })
-            await interaction.reply({
-                content: `${interaction.client.emotes.success} | Playing URL: ${inputUrl}`,
-                ephemeral: true,
-            })
+            // await interaction.reply({
+            //     content: `${interaction.client.emotes.success} | Playing URL: ${inputUrl}`,
+            //     ephemeral: true,
+            // })
         } catch (e) {
             await interaction.reply({
                 content: `${interaction.client.emotes.error} | ${e}`,

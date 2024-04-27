@@ -15,14 +15,14 @@ module.exports = {
             let index = Number(interaction.options.getString('index'))
             if (!queue)
                 await interaction.reply({
-                    content: `${client.emotes.error} | There is nothing in the queue right now!`,
+                    content: `${interaction.client.emotes.error} | There is nothing in the queue right now!`,
                     ephemeral: true,
                 })
             else {
                 if (index) {
                     if (isNaN(index))
                         await interaction.reply({
-                            content: `${client.emotes.error} | Please enter a valid number!`,
+                            content: `${interaction.client.emotes.error} | Please enter a valid number!`,
                             ephemeral: true,
                         })
                     else {

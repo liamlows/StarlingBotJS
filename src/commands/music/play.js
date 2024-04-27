@@ -14,14 +14,14 @@ module.exports = {
         try {
             let inputUrl = interaction.options.getString('song')
             let channel = interaction.member.voice.channel
-            interaction.client.distube.play(channel, inputUrl, {
+            await interaction.client.distube.play(channel, inputUrl, {
                 member: interaction.member,
                 textChannel: interaction.channel,
             })
-            // await interaction.reply({
-            //     content: `${interaction.client.emotes.success} | Playing URL: ${inputUrl}`,
-            //     ephemeral: true,
-            // })
+            await interaction.reply({
+                content: `${interaction.client.emotes.success} | Playing URL: ${inputUrl}`,
+                ephemeral: true,
+            })
         } catch (e) {
             await interaction.reply({
                 content: `${interaction.client.emotes.error} | ${e}`,

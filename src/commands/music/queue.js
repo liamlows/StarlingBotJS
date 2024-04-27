@@ -12,18 +12,21 @@ module.exports = {
                     content: `${interaction.client.emotes.error} | There is nothing in the queue right now!`,
                     ephemeral: true,
                 })
-            const q = queue.songs
-                .slice(0, 15)
-                .map(
-                    (song, i) =>
-                        `${i === 0 ? 'Playing:' : `${i}.`} ${song.name} - \`${
-                            song.formattedDuration
-                        }\``
-                )
-                .join('\n')
-            await interaction.channel.send(
-                `${interaction.client.emotes.queue} | **Server Queue**\n${q}`
-            )
+            else {
+                const q = queue.songs
+                    .slice(0, 15)
+                    .map(
+                        (song, i) =>
+                            `${i === 0 ? 'Playing:' : `${i}.`} ${
+                                song.name
+                            } - \`${song.formattedDuration}\``
+                    )
+                    .join('\n')
+                await interaction.reply({
+                    content: `${interaction.client.emotes.queue} | **Server Queue**\n${q}`,
+                    ephemeral: true,
+                })
+            }
         } catch (e) {
             await interaction.reply({
                 content: `${interaction.client.emotes.error} | ${e}`,

@@ -1,5 +1,7 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "eslint.experimental.useFlatConfig": true
 }

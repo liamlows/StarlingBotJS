@@ -10,7 +10,7 @@ export default class AddSongEvent extends DisTubeEvent<Events.ADD_SONG> {
       embeds: [
         new EmbedBuilder()
           .setColor("Blurple")
-          .setTitle("DisTube")
+          .setTitle("LW Music")
           .setDescription(`Added \`${song.name}\` to the queue`),
       ],
     });

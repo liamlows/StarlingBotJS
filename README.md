@@ -6,15 +6,20 @@ Supports youtube and souncloud out of the box.
 
 ## Install instructions
 
-1. Install Node v20 or higher, [ffmpeg](https://www.ffmpeg.org/download.html), and [sodium-native](https://www.npmjs.com/package/sodium-native)
+1. Install dependencies
+
+- Node v20 or higher
+- [ffmpeg](https://www.ffmpeg.org/download.html)
+- Python 3.12 or greater
+- `build-essential` if on linux/WSL2 `sudo apt install build-essential`
 
 2. Create a .env file with the following information
 
 ```
 DISCORD_TOKEN=
-DISCORD_CLIENT_ID=
-GUILDID=
 ```
+
+You can obtain your discord token from the discord developer portal. The bot will need all intents and voice/message permissions. You can also add the bot to your server here.
 
 3. Run `yarn start`
 

@@ -167,8 +167,8 @@ packages:
     peerDependencies:
       distube: '5'
 
-  '@distube/ytdl-core@4.15.8':
-    resolution: {integrity: sha512-yuQr8KDKuusXmaNNAw+stsRu6nmJUPy9hL6IgPm/8ei1zixfQFZpAIflXsqDrdXIaSp4hzTmQ1Z0KYhuqF2/JQ==}
+  '@distube/ytdl-core@4.15.9':
+    resolution: {integrity: sha512-8rFL1NAMsYz4t7Ryaz09Ld7VgoBurGB0KECG8BpTR2vikN0gD1VVusdfZqTYK/gp7uj/TbTJBa85oMCiVXvxcA==}
     engines: {node: '>=14.0'}
 
   '@distube/ytpl@1.2.1':
@@ -2727,14 +2727,14 @@ snapshots:
 
   '@distube/youtube@1.0.4(distube@5.0.4(@discordjs/voice@0.18.0(@discordjs/opus@0.9.0))(discord.js@14.17.3))':
     dependencies:
-      '@distube/ytdl-core': 4.15.8
+      '@distube/ytdl-core': 4.15.9
       '@distube/ytpl': 1.2.1
       '@distube/ytsr': 2.0.4
       distube: 5.0.4(@discordjs/voice@0.18.0(@discordjs/opus@0.9.0))(discord.js@14.17.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@distube/ytdl-core@4.15.8':
+  '@distube/ytdl-core@4.15.9':
     dependencies:
       http-cookie-agent: 6.0.8(tough-cookie@4.1.4)(undici@5.28.5)
       https-proxy-agent: 7.0.6

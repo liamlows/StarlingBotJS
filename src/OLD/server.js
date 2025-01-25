@@ -20,7 +20,6 @@ const client = new Client({
 })
 // Create Distube client
 client.distube = new DisTube(client, {
-    leaveOnStop: false,
     emitNewSongOnly: true,
     emitAddSongWhenCreatingQueue: false,
     emitAddListWhenCreatingQueue: false,
@@ -122,6 +121,7 @@ client.distube
         )
     )
     .on('error', (channel, e) => {
+        console.error(e)
         if (channel)
             channel.send(
                 `${client.emotes.error} | An error encountered: ${e

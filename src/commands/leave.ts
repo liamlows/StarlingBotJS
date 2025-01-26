@@ -13,7 +13,7 @@ export default class LeaveCommand extends Command {
     try {
       this.client.distube.voices.leave(interaction.guildId);
       await interaction.editReply({
-        embeds: [new EmbedBuilder().setColor("Blurple").setTitle("LW Music").setDescription(`Leaving!`)],
+        embeds: [new EmbedBuilder().setColor("Blurple").setTitle("LW Music").setDescription(`Goodbye!`)],
       });
     } catch (e) {
       console.error(e);

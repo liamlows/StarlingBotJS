@@ -19,8 +19,6 @@ import type {
 } from "discord.js";
 import SoundCloudPlugin from "@distube/soundcloud";
 
-// dotenv.config();
-
 const TOKEN = process.env.DISCORD_TOKEN;
 
 export const followUp = async (
@@ -53,6 +51,7 @@ class DisTubeClient extends Client<true> {
   }
   async loadCommand(name: string) {
     try {
+      if (name.match(/^.*\.(d\.ts|js\.map)$/i)) return false;
       const CMD = await import(`./commands/${name}`);
       const cmd: Command = new CMD.default(this);
       this.commands.set(cmd.name, cmd);
@@ -66,6 +65,7 @@ class DisTubeClient extends Client<true> {
   }
   async loadEvent(name: string) {
     try {
+      if (name.match(/^.*\.(d\.ts|js\.map)$/i)) return false;
       const E = await import(`./events/client/${name}`);
       const event = new E.default(this);
       const fn = event.run.bind(event);
@@ -81,6 +81,7 @@ class DisTubeClient extends Client<true> {
 
   async loadDisTubeEvent(name: string) {
     try {
+      if (name.match(/^.*\.(d\.ts|js\.map)$/i)) return false;
       const E = await import(`./events/distube/${name}`);
       const event = new E.default(this);
       const fn = event.run.bind(event);

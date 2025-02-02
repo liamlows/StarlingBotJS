@@ -16,7 +16,7 @@ Overall this project will be a WIP most of the time
   - If on OSX install xcode and then CLI tools `xcode-select --install`
   - If on windows... good luck (joking, but im not sure what is needed as i just use WSL2, maybe visual studio?)
 
-2. Create a .env file with the following information
+2. Create a .env file with the following information in the root of the project
 
 ```
 DISCORD_TOKEN=
@@ -60,7 +60,7 @@ If running on linux, you can use PM2 installed globally to run the app as a daem
 
 3. Start the application with pm2 (from root of project)
 
-   `pm2 start dist/index.js --env-file .env`
+   `pm2 start dist/index.js`
 
 4. Setup pm2 to run with startup
 
@@ -69,3 +69,11 @@ If running on linux, you can use PM2 installed globally to run the app as a daem
 ## Connecting SoundCloud Account
 
 You can connect to SoundCloud with your client ID and oauth token allowing the bot to play otherwise restricted content. To learn how to get these values [click here](https://github.com/Tenpi/soundcloud.ts#getting-started). Once obtained simply run the `/authsoundcloud` command and provide the IDs in the options
+
+Once you have obtained the soundcloud client ID and OAuth Token you can then use them with the `/authsoundcloud [clientid] [oauthtoken]` command.
+
+## Troubleshooting
+
+### ffmpeg `SAMPLE-AES encryption is not supported yet`
+
+If you are trying to play soundcloud content and get a ffmpeg exit code 1 error in discord, check the logs. If you see `SAMPLE-AES encryption is not supported yet` that is because recently soundcloud has decided to some tracks DRM protected. As a result when you attempt to play even non souncloud go songs it may fail and exit. To get around this follow the instructions under the "Connecting SoundCloud Account" section.
